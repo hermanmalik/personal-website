@@ -1,0 +1,12 @@
+
+logistics:
+- set up pug or hugo (musa has bin/build_and_publish and gulpfile.js)
+- set up build environment
+- node stuff (need to figure out)
+- LICENSE.txt, README.md, robots.txt, 404.html, .htaccess, 
+- musa also has site.webmanifest, favicon.ico, browserconfig.xml, .editorconfig, .gitattributes (in public_html) and musa-website.iml outside
+
+actual content:
+  - some pages
+  - css: normalize.css + main stylesheet
+  - js: darkmode, menu?, jquery?, modernizr?, 
