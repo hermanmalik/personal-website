@@ -1,8 +1,11 @@
 
 logistics:
-- set up pug or hugo (musa has bin/build_and_publish and gulpfile.js)
-- set up build environment
-- node stuff (need to figure out)
+- set up ssg
+  - options: eleventy, pug, hugo, next.js 
+  - musa uses gulp with pug, has bin/build_and_publish and gulpfile.js
+  - we want to avoid lots of js, large npm dependency tree, etc, something simple instead
+  - set up build environment
+  - node stuff (need to figure out). musa has small package.json with large package_lock (npm) / yarn_lock (yarn)
 - LICENSE.txt, README.md, robots.txt, 404.html, .htaccess, 
 - musa also has site.webmanifest, favicon.ico, browserconfig.xml, .editorconfig, .gitattributes (in public_html) and musa-website.iml outside
 
