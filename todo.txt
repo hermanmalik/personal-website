@@ -1,0 +1,40 @@
+
+LOGISTICS:
+- [ set up ssg
+    - options: eleventy, pug, hugo, next.js 
+    - musa uses gulp with pug, has bin/build_and_publish and gulpfile.js
+    - we want to avoid lots of js, large npm dependency tree, etc, something simple instead
+    - set up build environment
+    - node stuff (need to figure out). musa has small package.json with large package_lock (npm) / yarn_lock (yarn)
+
+- server things (see .todo-htaccess)
+    [ redirects
+    - error pages - done by cloudflare. 403 page made but /css/ goes to 404 - why?
+    - guess extensions (i.e suppress .html and the like): done by cloudflare
+    - suppress www: done
+    - force https://
+    security
+    - clickjacking (low priority)
+    - csp, cross site scripting, xss attacks - done by cloudflare?
+    - [ which directories are allowed - this is important!
+    - make sure configuration files, build scripts, metadata, etc are not public
+    - is mime sniffing an issue? probably only if I take user-uploaded content 
+    expires headers
+    better versioning than querystrings
+
+- app icon and site.webmanifest if I want to make it pinnable to taskbar / home screens
+
+- musa also has browserconfig.xml, .editorconfig, .gitattributes (in public_html) and musa-website.iml outside
+
+- write up setup details in README
+
+- favicon.ico: done
+
+CONTENT:
+    page ideas
+    - hopf
+    - puzzles
+    - idk?
+    other frontend
+    - css: normalize.css + main stylesheet
+    - js: darkmode, menu?, jquery?, modernizr?, 
