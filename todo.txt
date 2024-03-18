@@ -33,8 +33,11 @@ LOGISTICS:
 CONTENT:
     page ideas
     - hopf
+      - https://discourse.threejs.org/t/the-hopf-fibration-from-topology/19145
+      - https://philogb.github.io/page/hopf/#
+      - https://github.com/wgxli/hopf-fibration/blob/master/images/screenshot.png
     - puzzles
     - idk?
     other frontend
     - css: normalize.css + main stylesheet
-    - js: darkmode, menu?, jquery?, modernizr?, 
+    - js: darkmode, menu?, jquery?, modernizr? 
