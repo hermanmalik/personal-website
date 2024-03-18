@@ -1,0 +1,135 @@
+
+/* //////////////////////////////////////// PAGE LAYOUT /////////////////////////////////////////// */
+#container {
+    max-width:1200px;
+    margin-top:40px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 2%;
+    padding-right:2%;
+    width: 80%;
+    min-height: 95vh;
+    /* position: relative; */
+    @media (max-width:430px) {
+      width: 90%;
+    }
+  }
+
+  
+  /* /////////////////////////////////// FONTS, COLORS ////////////////////////////////////////////// */
+  /* Colors */
+  body {
+    --theme-color: rgb(0, 50, 98);
+    --text-color: #2B2E33;
+    --bkg-color: #F9FAFA;
+    --bkg-color-light: #eaeaea;
+    --bkg-color-lighter: #ddd;
+    --link-color: #219ab3;
+    --link-hover-color: #11505d;
+  }
+  body.dark-theme {
+    --theme-color: rgb(0, 63, 121);
+    /* --theme-color: rgb(0, 39, 76); I'm actually stupid at design I think lighter is better but idk */
+    --text-color: #eee;
+    --bkg-color: rgb(24, 26, 28);
+    --bkg-color-light: rgb(35,38,41);
+    --bkg-color-lighter: rgb(40,43,46);
+    --link-color: #219ab3;
+    --link-hover-color: #11505d;
+  }
+  
+  body {
+    background: var(--bkg-color);
+    color: var(--text-color);
+  }
+  
+  /* Fonts */
+  body {
+      font-family: "Avenir Next", "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  input {
+    font-family: "Avenir Next", "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  
+  
+  /* /////////////////////////////////// TEXT, LINKS //////////////////////////////////////////////// */
+  /* Headers */
+  h1, h2, h3, h4, h5, h6 {
+      font-weight: bold;
+      letter-spacing: 1px;
+  }
+  
+  
+  /* Body Text, List Text, Table Text */
+  p, li {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+  }
+  th, td {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  
+  @media(min-width:600px) {
+    p, li {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    th, td {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Footer Text */
+  footer p {
+    font-size: .8em;
+    text-align: center;
+  }
+  
+  /* Links */
+  a {
+    color: var(--link-color);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+        text-decoration: none;
+  }
+  
+  a:hover, a:focus {
+    color: var(--link-hover-color);
+  }
+  
+  /* Manual changes */
+  .important {
+    font-size: 1.1em;
+  }
+  
+  .text-bold {
+    font-weight: bold;
+  }
+  
+  .text-justify {
+    text-align: justify;
+  }
+  
+  .text-center{
+    text-align: center;
+  }
+  
+
+  /* //////////////////////////////////////// IMAGES //////////////////////////////////////////////// */
+  img {
+    max-width: 100%;
+  }
+
+  
+  /* //////////////////////////////////////// DARK MODE ////////////////////////////////////////////////// */
+  /* this must be kept at bottom */
+  body:not(.dark-theme) .light-hide {
+    display: none;
+  }
+  body.dark-theme .dark-hide {
+    display: none;
+  }
