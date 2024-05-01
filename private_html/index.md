@@ -1,5 +1,5 @@
 ---
-layout: main.liquid
+layout: index.liquid
 title: Herman Malik
 meta-description: herman malik website
 ---

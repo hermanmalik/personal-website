@@ -7,7 +7,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("private_html/_js");
     eleventyConfig.addPassthroughCopy("private_html/*.ico");
     eleventyConfig.addPassthroughCopy("private_html/*.txt");
-    eleventyConfig.addPassthroughCopy("private_html/4*.html");
     
     eleventyConfig.setPugOptions({ debug: true });
 
