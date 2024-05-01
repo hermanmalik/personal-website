@@ -26,7 +26,7 @@ LOGISTICS:
 
 - musa also has browserconfig.xml, .editorconfig, .gitattributes (in public_html) and musa-website.iml outside
 
-- write up setup details in README
+- write up setup details in README.md and setup.md, license in LICENSE.txt
 
 - favicon.ico: done
 
