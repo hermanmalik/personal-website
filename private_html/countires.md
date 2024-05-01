@@ -1,3 +1,10 @@
+---
+layout: main.liquid
+title: Countries thing
+meta-description: landmasses mod countries 
+
+---
+
 ok wow I guess I spent an hour on this but the answer is somewhere around 50:
 
 **main ones (5)**

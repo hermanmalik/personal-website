@@ -1,15 +1,16 @@
 // const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("private_html/assets");
-    eleventyConfig.addPassthroughCopy("private_html/css");
-    eleventyConfig.addPassthroughCopy("private_html/img");
-    eleventyConfig.addPassthroughCopy("private_html/js");
+    eleventyConfig.addPassthroughCopy("private_html/_assets");
+    eleventyConfig.addPassthroughCopy("private_html/_css");
+    eleventyConfig.addPassthroughCopy("private_html/_img");
+    eleventyConfig.addPassthroughCopy("private_html/_js");
     eleventyConfig.addPassthroughCopy("private_html/*.ico");
     eleventyConfig.addPassthroughCopy("private_html/*.txt");
+    eleventyConfig.addPassthroughCopy("private_html/4*.html");
     
     eleventyConfig.setPugOptions({ debug: true });
-    
+
     // eleventyConfig.addTransform("htmlmin", function (content) {
 	// 	if ((this.page.outputPath || "").endsWith(".html")) {
 	// 		let minified = htmlmin.minify(content, {

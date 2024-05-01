@@ -1,19 +1,33 @@
+---
+title:
+meta-description:
+page_css:
+page_js:
+---
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Herman Malik</title>
-      <meta name="description" content="herman malik website">
+      <title>{{ title }}</title>
+      {% if meta_description -%}
+      <meta name="description" content="{{ meta-description }}">
+      {%- endif %}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="shortcut icon" href="favicon.ico">
       <link href="https://cdn.skypack.dev/sanitize.css" rel="stylesheet" />
-      <link href="css/main.css" rel="stylesheet" />
+      <link href="../_css/main.css" rel="stylesheet" />
+      {% if page_css -%}
+      {{ page_css }}
+      {% endif %}
    </head>
    <body>
       <div id="container">
-         <h1> it is a website </h1>
-         <p> I might even put some content here eventually </p>
+         {{ content }}
       </div>
+      {% if page_js -%}
+      {{ page_js }}
+      {% endif %}
    </body>
 </html>
