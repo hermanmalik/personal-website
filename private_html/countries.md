@@ -29,7 +29,7 @@ ok wow I guess I spent an hour on this but the answer is somewhere around 50:
 - Antigua and Barbuda
 - Australia    
 - Bahamas
-- not bahrain because it shockingly has a land border
+- NOT bahrain because it shockingly has a land border
 - Barbados
 - Cape Verde
 - Comoros
