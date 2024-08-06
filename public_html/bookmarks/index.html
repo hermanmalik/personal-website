@@ -1,33 +1,48 @@
----
-title:
-meta-description:
-page_css:
-page_js:
----
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>{{ title }}</title>
-      {% if meta_description -%}
-      <meta name="description" content="{{ meta-description }}">
-      {%- endif %}
+      <title>bookmarks</title>
+      
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="shortcut icon" href="../assets/favicon.ico" />
       <link href="https://cdn.skypack.dev/sanitize.css" rel="stylesheet" />
       <link href="../_css/main.css" rel="stylesheet" />
-      {% if page_css -%}
-      {{ page_css }}
-      {% endif %}
+      <style>
+/* Add some basic styling */
+ul { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+}
+li { 
+    margin: 5px 0; 
+}
+.folder > ul {
+    display: none;
+    padding-left: 20px;
+}
+.folder.expanded > ul {
+    display: block;
+}
+.toggle-button {
+    cursor: pointer;
+    user-select: none;
+    margin-right: 5px;
+}
+</style>
+
+      
    </head>
    <body>
       <div id="container">
-         {{ content }}
+         <h1>Bookmarks</h1>
+<ul id="bookmarks"></ul>
       </div>
-      {% if page_js -%}
-      {{ page_js }}
-      {% endif %}
+      <script src="../_js/bookmarks.js"></script>
+
+      
    </body>
 </html>
