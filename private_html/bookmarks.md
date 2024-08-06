@@ -27,6 +27,7 @@ page_css: |
     }
     </style>
 page_js: |
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="../_js/bookmarks.js"></script>
 ---
 
