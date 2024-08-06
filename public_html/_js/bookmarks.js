@@ -3,9 +3,10 @@ let API_URL;
 let API_KEY;
 const ENCRYPTED_API_URL = "U2FsdGVkX182N1bf/csQKKu+yXkKZ3dQjrIHNBB6VqnYOFWyiWM0hlC3VxR3oj081cKue5rtN1sCvJ2yPs9+f3j1TrP8JH18cG0/BBvAPgc=" // CryptoJS.AES.encrypt(API_URL, secretKey).toString();
 const ENCRYPTED_API_KEY = "U2FsdGVkX1/b7K3ji/jMhhoucRYfq5BHFozOrzjhouaH3Ro56X1BtA9sRqiGzWx1R8y3yus3KbfTiX6rzS9KBFxSERGFMViNGFOB5gaFDFkOmfdtcj4++H5v+8oYqEZkjk3uPQ43aRdr3qMXsBxGENao7RzTokOEhZVexbgOU5QRA4UiPBw9bSsNtvYEu88LIdAF0L4LY6MRKxx/KOA9jCVO9uBILLtT9ayK15iDd+CjM63+/7LArqqN4Qzxs86wgAM3LmtUQKRsF43Ok4JmHmO3qp4EILAL68FH+vIMoytTI2Uvy5rN8eLeeFVKwZ4/" // CryptoJS.AES.encrypt(API_KEY, secretKey).toString();
+const PASSWORD_TEST = 'U2FsdGVkX1+A5yiA4ByqTzKxHNkykKMjLGLzpLyOV30=' // CryptoJS.AES.encrypt('check', secretKey).toString();
 const FOLDERS_TO_OPEN = ['', 'Bookmarks bar', 'Other bookmarks'];
 const PAGE_SIZE = 1000;
-const debug = true;
+const debug = false;
 
 // Function to decrypt secrets
 function decryptSecret(encryptedText, key) {
@@ -17,13 +18,21 @@ function decryptSecret(encryptedText, key) {
 function getSecrets() {
   const password = prompt('Enter the decryption password:');
   const secretKey = password; // Use the password as the key for simplicity
-
-  API_URL = decryptSecret(ENCRYPTED_API_URL, secretKey);
-  API_KEY = decryptSecret(ENCRYPTED_API_KEY, secretKey);
+  
+  // Try decrypting; if decryptSecret errors the password is wrong
+  try {
+    API_URL = decryptSecret(ENCRYPTED_API_URL, secretKey);
+    API_KEY = decryptSecret(ENCRYPTED_API_KEY, secretKey);
+  } catch {
+    alert('wrong password');
+    throw new Error('wrong password');
+  }
+  // If the test decryption is not 'check' the password is wrong
+  if(decryptSecret(PASSWORD_TEST, secretKey) !== 'check') {
+    alert('wrong password');
+    throw new Error('wrong password');
+  }
 }
-
-// Call getSecrets to prompt user and start fetching
-getSecrets();
 
 // Function to fetch all bookmarks
 async function fetchAllBookmarks() {
@@ -53,6 +62,8 @@ async function fetchAllBookmarks() {
   if (debug) console.log(allBookmarks.length); 
   return allBookmarks;
 }
+
+getSecrets();
 
 // Build tree
 fetchAllBookmarks()
@@ -129,3 +140,4 @@ fetchAllBookmarks()
   .catch(error => {
     console.error('Error fetching bookmarks:', error);
   });
+
